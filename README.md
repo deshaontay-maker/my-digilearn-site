@@ -25,4 +25,4 @@ It makes a new branch with the change that class gives you. It never pushes.
 
 ## About me
 
-(Write one line about yourself here in class 2.)
+I am a beginner learning to ship software safely with AI help.

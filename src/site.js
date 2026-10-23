@@ -2,8 +2,17 @@
 const SITE_NAME = "My DigiLearn site";
 const OWNER_NAME = "DigiLearn Tester";
 
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function renderHome(visitorName) {
-  const name = visitorName || "friend";
+  const name = escapeHtml(visitorName || "friend");
   return [
     "<!doctype html>",
     '<html lang="en">',

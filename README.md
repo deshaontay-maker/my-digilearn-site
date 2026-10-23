@@ -26,3 +26,7 @@ It makes a new branch with the change that class gives you. It never pushes.
 ## About me
 
 I am a beginner learning to ship software safely with AI help.
+
+## What I want to learn
+
+How to make small reviewed changes and ship them with tests.

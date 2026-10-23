@@ -11,8 +11,9 @@ function escapeHtml(text) {
     .replace(/'/g, "&#39;");
 }
 
-function renderHome(visitorName) {
+function renderHome(visitorName, sha) {
   const name = escapeHtml(visitorName || "friend");
+  const shortVersion = escapeHtml(String(sha || "dev").slice(0, 7));
   return [
     "<!doctype html>",
     '<html lang="en">',
@@ -20,7 +21,7 @@ function renderHome(visitorName) {
     "<body>",
     "<h1>" + SITE_NAME + "</h1>",
     "<p>Hello, " + name + "!</p>",
-    "<footer>Made by " + OWNER_NAME + "</footer>",
+    "<footer>Made by " + OWNER_NAME + " | Version " + shortVersion + "</footer>",
     "</body>",
     "</html>",
   ].join("\n");

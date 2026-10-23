@@ -6,7 +6,8 @@ const { renderHome } = require("../src/site");
 const { versionInfo } = require("../src/version");
 
 const out = path.join(__dirname, "..", "dist");
+const info = versionInfo(process.env);
 fs.mkdirSync(out, { recursive: true });
-fs.writeFileSync(path.join(out, "index.html"), renderHome());
-fs.writeFileSync(path.join(out, "version.json"), JSON.stringify(versionInfo(process.env)) + "\n");
+fs.writeFileSync(path.join(out, "index.html"), renderHome(undefined, info.sha));
+fs.writeFileSync(path.join(out, "version.json"), JSON.stringify(info) + "\n");
 console.log("Built dist/index.html and dist/version.json");
